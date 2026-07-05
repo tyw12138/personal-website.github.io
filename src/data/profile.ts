@@ -40,8 +40,8 @@ export interface ProfileData {
 }
 
 export const profile: ProfileData = {
-  name: "张明远",
-  firstName: "明远",
+  name: "田佑武",
+  firstName: "佑武",
   title: "全栈开发工程师 & UI 设计师",
   taglines: [
     "用代码构建美好体验",
@@ -50,7 +50,7 @@ export const profile: ProfileData = {
   ],
   avatar:
     "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20portrait%20of%20a%20young%20asian%20man%20in%20his%20late%2020s%2C%20warm%20lighting%2C%20minimalist%20style%2C%20soft%20focus%2C%20dark%20background%2C%20editorial%20photography&image_size=square_hd",
-  bio: "你好，我是明远。一名热爱创造的全栈开发者，专注于构建优雅、高性能的 Web 应用。我相信好的产品源于对细节的执着追求和对用户体验的深度思考。工作之余，我喜欢摄影、阅读和探索新的技术领域。",
+  bio: "你好，我是佑武。一名热爱创造的全栈开发者，专注于构建优雅、高性能的 Web 应用。我相信好的产品源于对细节的执着追求和对用户体验的深度思考。工作之余，我喜欢摄影、阅读和探索新的技术领域。",
   stats: [
     { label: "年工作经验", value: 6, suffix: "+" },
     { label: "完成项目", value: 50, suffix: "+" },
