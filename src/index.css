@@ -59,7 +59,7 @@
   }
 
   .prose-custom a {
-    @apply text-indigo-600 underline decoration-underline-offset-2 hover:text-indigo-500
+    @apply text-indigo-600 underline underline-offset-2 hover:text-indigo-500
            dark:text-indigo-400 dark:hover:text-indigo-300;
   }
 
