@@ -48,8 +48,7 @@ export const profile: ProfileData = {
     "热爱设计与技术的交汇点",
     "持续学习，永远好奇",
   ],
-  avatar:
-    "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20portrait%20of%20a%20young%20asian%20man%20in%20his%20late%2020s%2C%20warm%20lighting%2C%20minimalist%20style%2C%20soft%20focus%2C%20dark%20background%2C%20editorial%20photography&image_size=square_hd",
+  avatar: "/avatar.svg",
   bio: "你好，我是佑武。一名热爱创造的全栈开发者，专注于构建优雅、高性能的 Web 应用。我相信好的产品源于对细节的执着追求和对用户体验的深度思考。工作之余，我喜欢摄影、阅读和探索新的技术领域。",
   stats: [
     { label: "年工作经验", value: 6, suffix: "+" },
@@ -84,8 +83,7 @@ export const profile: ProfileData = {
       title: "Nebula 设计系统",
       description:
         "一套完整的企业级设计系统，包含 200+ 组件、设计规范和开发文档，服务于多个产品线。",
-      image:
-        "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=modern%20design%20system%20dashboard%20UI%2C%20dark%20theme%2C%20gold%20accents%2C%20clean%20minimalist%20interface%2C%20components%20library%2C%20editorial%20style&image_size=landscape_16_9",
+      image: "/project-1.svg",
       tags: ["React", "TypeScript", "Storybook", "Design System"],
       link: "#",
     },
@@ -93,8 +91,7 @@ export const profile: ProfileData = {
       title: "Aurora 电商平台",
       description:
         "高端电商平台，支持多语言、多币种，集成 AI 推荐系统，月活用户超过 100 万。",
-      image:
-        "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=luxury%20ecommerce%20website%20interface%2C%20dark%20elegant%20theme%2C%20gold%20highlights%2C%20product%20showcase%2C%20premium%20aesthetic%2C%20editorial%20layout&image_size=landscape_16_9",
+      image: "/project-2.svg",
       tags: ["Next.js", "Node.js", "PostgreSQL", "AI"],
       link: "#",
     },
@@ -102,8 +99,7 @@ export const profile: ProfileData = {
       title: "Lumina 数据可视化",
       description:
         "交互式数据可视化平台，支持实时数据流、自定义仪表盘和智能洞察分析。",
-      image:
-        "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=data%20visualization%20dashboard%2C%20dark%20mode%2C%20charts%20and%20graphs%2C%20gold%20and%20purple%20accents%2C%20futuristic%20interface%2C%20clean%20design&image_size=landscape_16_9",
+      image: "/project-3.svg",
       tags: ["D3.js", "React", "WebSocket", "Python"],
       link: "#",
     },
@@ -111,8 +107,7 @@ export const profile: ProfileData = {
       title: "Echo 社交应用",
       description:
         "专注于深度内容分享的社交平台，支持长文、播客和视频多种内容形态。",
-      image:
-        "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=social%20media%20app%20interface%2C%20mobile%20first%20design%2C%20dark%20theme%2C%20warm%20accents%2C%20content%20feed%2C%20modern%20minimal&image_size=landscape_16_9",
+      image: "/project-4.svg",
       tags: ["React Native", "GraphQL", "AWS", "Redis"],
       link: "#",
     },
