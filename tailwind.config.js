@@ -46,36 +46,6 @@ export default {
         sans: ["Inter", "-apple-system", "system-ui", "sans-serif"],
         mono: ["JetBrains Mono", "Fira Code", "monospace"],
       },
-      typography: (theme) => ({
-        DEFAULT: {
-          css: {
-            maxWidth: 'none',
-            color: theme('colors.stone.700'),
-            a: {
-              color: theme('colors.indigo.600'),
-              '&:hover': { color: theme('colors.indigo.500') },
-            },
-            code: {
-              color: theme('colors.indigo.700'),
-            },
-            'pre code': {
-              color: undefined,
-            },
-          },
-        }),
-        invert: {
-          css: {
-            color: theme('colors.stone.300'),
-            a: {
-              color: theme('colors.indigo.400'),
-              '&:hover': { color: theme('colors.indigo.300') },
-            },
-            code: {
-              color: theme('colors.indigo.300'),
-            },
-          },
-        },
-      }),
     },
   },
   plugins: [],
