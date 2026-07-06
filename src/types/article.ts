@@ -1,31 +1,36 @@
 export interface ArticleFrontmatter {
+  title?: string;
+  date?: string;
+  summary?: string;
+  tags?: string[];
+  draft?: boolean;
+  category?: string;
+}
+
+export interface ArticleData {
+  slug: string;
   title: string;
   date: string;
-  category: string;
-  tags: string[];
   summary: string;
-  draft?: boolean;
-}
-
-export interface ArticleMeta extends ArticleFrontmatter {
-  slug: string;
-  readingTime: number;
-}
-
-export interface ArticleData extends ArticleMeta {
+  tags: string[];
   content: string;
+  readingTime: number;
+  draft?: boolean;
+  category?: string;
 }
 
-export interface Category {
-  key: string;
-  label: string;
+export interface TreeNode {
+  name: string;
+  type: "folder" | "file";
+  path: string;
+  children?: TreeNode[];
+  article?: ArticleData;
+  isOpen?: boolean;
 }
 
 export interface SearchEntry {
   slug: string;
   title: string;
   summary: string;
-  category: string;
-  tags: string[];
   contentPreview: string;
 }
