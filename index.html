@@ -13,6 +13,8 @@
         const t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         document.documentElement.classList.add(t);
       })();
+      window.global = window.global || window;
+      window.process = window.process || { env: {} };
     </script>
   </head>
   <body>

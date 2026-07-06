@@ -5,6 +5,9 @@ import { traeBadgePlugin } from 'vite-plugin-trae-solo-badge';
 
 export default defineConfig({
   base: '/personal-website.github.io/',
+  define: {
+    global: 'globalThis',
+  },
   build: {
     sourcemap: 'hidden',
   },
@@ -18,7 +21,12 @@ export default defineConfig({
       clickUrl: 'https://www.trae.ai/solo?showJoin=1',
       autoTheme: true,
       autoThemeTarget: '#root'
-    }), 
+    }),
     tsconfigPaths()
   ],
+  resolve: {
+    alias: {
+      buffer: 'buffer',
+    },
+  },
 })
