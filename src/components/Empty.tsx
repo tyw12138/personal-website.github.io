@@ -1,8 +1,7 @@
-import { cn } from '@/lib/utils'
-
-// Empty component
-export default function Empty() {
+export default function Empty({ message = "暂无内容" }: { message?: string }) {
   return (
-    <div className={cn('flex h-full items-center justify-center')}>Empty</div>
-  )
+    <div className="py-16 text-center text-stone-400 dark:text-stone-500">
+      {message}
+    </div>
+  );
 }

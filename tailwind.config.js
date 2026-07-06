@@ -16,82 +16,66 @@ export default {
     },
     extend: {
       colors: {
-        ink: {
-          50: "#f5f5f7",
-          100: "#e8e8ec",
-          200: "#d1d1d9",
-          300: "#a9a9b8",
-          400: "#7a7a8c",
-          500: "#5c5c6e",
-          600: "#494958",
-          700: "#3a3a46",
-          800: "#23232c",
-          900: "#14141a",
-          950: "#0a0a0f",
+        stone: {
+          50: "#fafaf9",
+          100: "#f5f5f4",
+          200: "#e7e5e4",
+          300: "#d6d3d1",
+          400: "#a8a29e",
+          500: "#78716c",
+          600: "#57534e",
+          700: "#44403c",
+          800: "#292524",
+          900: "#1c1917",
+          950: "#0c0a09",
         },
-        gold: {
-          50: "#fef9ed",
-          100: "#fcf1d4",
-          200: "#f8e0a6",
-          300: "#f5c86d",
-          400: "#f1af3d",
-          500: "#e8961c",
-          600: "#cc7612",
-          700: "#a95512",
-          800: "#894316",
-          900: "#713816",
-        },
-        lavender: {
-          50: "#f6f5fb",
-          100: "#ece9f6",
-          200: "#d8d3ed",
-          300: "#b9b0de",
-          400: "#9789cb",
-          500: "#7b6bb8",
-          600: "#6754a0",
-          700: "#554484",
-          800: "#483b6c",
-          900: "#3d3359",
+        indigo: {
+          50: "#eef2ff",
+          100: "#e0e7ff",
+          200: "#c7d2fe",
+          300: "#a5b4fc",
+          400: "#818cf8",
+          500: "#6366f1",
+          600: "#4f46e5",
+          700: "#4338ca",
+          800: "#3730a3",
+          900: "#312e81",
         },
       },
       fontFamily: {
-        display: ["'Playfair Display'", "serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["Inter", "-apple-system", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "Fira Code", "monospace"],
       },
-      animation: {
-        "fade-in": "fadeIn 0.8s ease-out forwards",
-        "fade-in-up": "fadeInUp 0.8s ease-out forwards",
-        "fade-in-down": "fadeInDown 0.8s ease-out forwards",
-        "float": "float 6s ease-in-out infinite",
-        "glow": "glow 3s ease-in-out infinite alternate",
-        "shimmer": "shimmer 2s linear infinite",
-      },
-      keyframes: {
-        fadeIn: {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            maxWidth: 'none',
+            color: theme('colors.stone.700'),
+            a: {
+              color: theme('colors.indigo.600'),
+              '&:hover': { color: theme('colors.indigo.500') },
+            },
+            code: {
+              color: theme('colors.indigo.700'),
+            },
+            'pre code': {
+              color: undefined,
+            },
+          },
+        }),
+        invert: {
+          css: {
+            color: theme('colors.stone.300'),
+            a: {
+              color: theme('colors.indigo.400'),
+              '&:hover': { color: theme('colors.indigo.300') },
+            },
+            code: {
+              color: theme('colors.indigo.300'),
+            },
+          },
         },
-        fadeInUp: {
-          "0%": { opacity: "0", transform: "translateY(30px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        fadeInDown: {
-          "0%": { opacity: "0", transform: "translateY(-30px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-15px)" },
-        },
-        glow: {
-          "0%": { boxShadow: "0 0 20px rgba(245, 200, 109, 0.3)" },
-          "100%": { boxShadow: "0 0 40px rgba(245, 200, 109, 0.6)" },
-        },
-        shimmer: {
-          "0%": { backgroundPosition: "-200% 0" },
-          "100%": { backgroundPosition: "200% 0" },
-        },
-      },
+      }),
     },
   },
   plugins: [],
