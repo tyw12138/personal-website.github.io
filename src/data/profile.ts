@@ -21,8 +21,8 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  author: "田佑武",
-  title: "田佑武的知识库",
+  author: "tyw",
+  title: "tyw's 知识库",
   description: "个人知识库与学习记录",
   subtitle: "记录学习路上的思考与实践",
   github: "https://github.com/tyw12138",

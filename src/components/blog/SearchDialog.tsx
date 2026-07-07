@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Search as SearchIcon, X } from "lucide-react";
 import { useSearch } from "@/hooks/useSearch";
 import { categories } from "@/data/categories";
@@ -11,6 +11,7 @@ interface SearchDialogProps {
 
 export default function SearchDialog({ open, onClose }: SearchDialogProps) {
   const inputRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
   const { query, setQuery, results } = useSearch();
 
   useEffect(() => {
@@ -32,22 +33,22 @@ export default function SearchDialog({ open, onClose }: SearchDialogProps) {
 
   return (
     <div className="fixed inset-0 z-50" onClick={onClose}>
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
       <div
         className="absolute top-[15%] left-1/2 -translate-x-1/2 w-full max-w-xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="mx-4 bg-white rounded-xl shadow-2xl border border-stone-200 overflow-hidden dark:bg-stone-900 dark:border-stone-700">
-          <div className="flex items-center gap-3 px-4 py-3 border-b border-stone-200 dark:border-stone-700">
-            <SearchIcon className="w-5 h-5 text-stone-400 shrink-0" />
+        <div className="mx-4 glass-card shadow-2xl overflow-hidden">
+          <div className="flex items-center gap-3 px-4 py-3 border-b border-border">
+            <SearchIcon className="w-5 h-5 text-text-tertiary shrink-0" />
             <input
               ref={inputRef}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="搜索文章..."
-              className="flex-1 bg-transparent outline-none text-stone-900 placeholder:text-stone-400 dark:text-stone-100"
+              className="flex-1 bg-transparent outline-none text-text-primary placeholder:text-text-tertiary"
             />
-            <button onClick={onClose} className="text-stone-400 hover:text-stone-600 dark:hover:text-stone-300">
+            <button onClick={onClose} className="text-text-tertiary hover:text-text-primary transition-colors">
               <X className="w-5 h-5" />
             </button>
           </div>
@@ -58,34 +59,33 @@ export default function SearchDialog({ open, onClose }: SearchDialogProps) {
                 const cat = categories.find((c) => c.key === item.category);
                 return (
                   <li key={item.slug}>
-                    <Link
-                      to={`/article/${item.slug}`}
-                      onClick={onClose}
-                      className="block px-4 py-3 hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors"
+                    <div
+                      onClick={() => { onClose(); navigate(`/article/${item.slug}`); }}
+                      className="block px-4 py-3 hover:bg-background-hover transition-colors cursor-pointer"
                     >
-                      <div className="font-medium text-sm text-stone-900 dark:text-stone-100">
+                      <div className="font-medium text-sm text-text-primary">
                         {item.title}
                       </div>
-                      <div className="mt-1 flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400">
+                      <div className="mt-1 flex items-center gap-2 text-xs text-text-tertiary">
                         {cat && <span>{cat.label}</span>}
                         <span>{item.summary}</span>
                       </div>
-                    </Link>
+                    </div>
                   </li>
                 );
               })}
             </ul>
           ) : query.trim() ? (
-            <div className="py-8 text-center text-sm text-stone-400 dark:text-stone-500">
+            <div className="py-8 text-center text-sm text-text-tertiary">
               未找到匹配的文章
             </div>
           ) : (
-            <div className="py-8 text-center text-sm text-stone-400 dark:text-stone-500">
+            <div className="py-8 text-center text-sm text-text-tertiary">
               输入关键词搜索文章...
             </div>
           )}
 
-          <div className="px-4 py-2 border-t border-stone-200 dark:border-stone-700 flex items-center justify-between text-xs text-stone-400">
+          <div className="px-4 py-2 border-t border-border flex items-center justify-between text-xs text-text-tertiary">
             <span>Ctrl + K</span>
             <span>ESC 关闭</span>
           </div>

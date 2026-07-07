@@ -11,7 +11,7 @@ interface SidebarTreeProps {
 export default function SidebarTree({ nodes, level = 0 }: SidebarTreeProps) {
   const navigate = useNavigate();
   const location = useLocation();
-  const [openFolders, setOpenFolders] = useState<Set<string>>(new Set(["前端开发", "后端开发", "算法", "笔记"]));
+  const [openFolders, setOpenFolders] = useState<Set<string>>(new Set(["frontend", "backend", "algorithm", "notes"]));
 
   const toggleFolder = (path: string) => {
     setOpenFolders((prev) => {

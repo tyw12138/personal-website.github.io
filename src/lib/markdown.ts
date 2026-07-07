@@ -1,4 +1,4 @@
-import type { ArticleData, ArticleFrontmatter, TreeNode } from "@/types/article";
+import type { ArticleData, ArticleFrontmatter, SearchEntry, TreeNode } from "@/types/article";
 
 const mdModules = import.meta.glob<string>("/content/**/*.md", {
   query: "?raw",
@@ -148,4 +148,14 @@ export function getFolderStats(): { total: number; folders: number } {
   }
 
   return { total: articles.length, folders: folders.size };
+}
+
+export function getSearchIndex(): SearchEntry[] {
+  return getAllArticles().map((article) => ({
+    slug: article.slug,
+    title: article.title,
+    summary: article.summary,
+    contentPreview: article.content.slice(0, 200),
+    category: article.category,
+  }));
 }

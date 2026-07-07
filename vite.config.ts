@@ -24,9 +24,4 @@ export default defineConfig({
     }),
     tsconfigPaths()
   ],
-  resolve: {
-    alias: {
-      buffer: 'buffer',
-    },
-  },
 })

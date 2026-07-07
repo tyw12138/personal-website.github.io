@@ -1,7 +1,8 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { Home, User, Search, Menu, X, BookOpen, Github, Mail } from "lucide-react";
+import { Home, User, Search, Menu, X, Github, Mail } from "lucide-react";
 import { useState } from "react";
 import SidebarTree from "@/components/SidebarTree";
+import SearchDialog from "@/components/blog/SearchDialog";
 import { buildTree } from "@/lib/markdown";
 import { siteConfig } from "@/data/profile";
 
@@ -9,6 +10,7 @@ export default function Layout() {
   const location = useLocation();
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [searchOpen, setSearchOpen] = useState(false);
   const tree = buildTree();
 
   const navItems = [
@@ -69,7 +71,7 @@ export default function Layout() {
             ))}
             <button
               className="ml-2 p-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-background-hover transition-colors"
-              onClick={() => {}}
+              onClick={() => setSearchOpen(true)}
             >
               <Search size={18} />
             </button>
@@ -121,6 +123,8 @@ export default function Layout() {
           </div>
         </main>
       </div>
+
+      <SearchDialog open={searchOpen} onClose={() => setSearchOpen(false)} />
     </div>
   );
 }

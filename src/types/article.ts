@@ -33,4 +33,10 @@ export interface SearchEntry {
   title: string;
   summary: string;
   contentPreview: string;
+  category?: string;
+}
+
+export interface Category {
+  key: string;
+  label: string;
 }
